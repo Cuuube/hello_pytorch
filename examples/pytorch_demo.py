@@ -319,13 +319,15 @@ def run():
     # 加载官方训练集和测试集，并打印
     # load_all_data()
     # print_data()
+    # view_training_data_figure(get_training_data())
 
     # 新建未训练模型
     # model = NeuralNetwork.new()
     # print(model)
 
+    # 训练模型并写入文件
     model_name = "pytorch_demo_model.pth"
-    # do_train_model(model_name)
+    do_train_model(model_name)
+    # 做预测
     do_predict(model_name)
 
-    # view_training_data_figure(get_training_data())
