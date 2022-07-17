@@ -266,6 +266,7 @@ def do_train_model(model_name):
 
 
 def do_predict(model_name):
+    device = get_device()
     # 初始化模型
     model = NeuralNetwork.new()
     # 加载模型
@@ -287,7 +288,7 @@ def do_predict(model_name):
 
         # 执行预测
         with torch.no_grad():
-            pred = model(img)
+            pred = model(img.to(device))
             predicted_label = CLASSES_EN[pred[0].argmax(0)]
             print(f'Predicted: "{predicted_label}", Actual: "{label}"')
 
